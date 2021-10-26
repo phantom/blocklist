@@ -1,0 +1,16 @@
+{
+  "name": "phantom-blocklist2",
+  "version": "0.13.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": "git@github.com:phantom-labs/blocklist.git",
+  "author": "Jordan Leigh <AlwaysBCoding@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "sha3": "^2.1.4"
+  }
+}
