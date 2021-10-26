@@ -1,5 +1,5 @@
 {
-  "name": "phantom-blocklist2",
+  "name": "@phantom-labs/blocklist",
   "version": "0.13.0",
   "main": "index.js",
   "types": "index.d.ts",
