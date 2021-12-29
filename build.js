@@ -9,9 +9,9 @@ const whitelist = yaml.load(fs.readFileSync('./whitelist.yaml', 'utf8'));
 const fuzzylist = yaml.load(fs.readFileSync('./fuzzylist.yaml', 'utf8'));
 
 const data = {
-  "blocklist": blocklist.map((item) => { return item.url }),
-  "whitelist": whitelist.map((item) => { return item.url }),
-  "fuzzylist": fuzzylist.map((item) => { return item.url })
+  "blocklist": blocklist.map((item) => { return item.url.toLowerCase() }),
+  "whitelist": whitelist.map((item) => { return item.url.toLowerCase() }),
+  "fuzzylist": fuzzylist.map((item) => { return item.url.toLowerCase() })
 };
 
 hash.update(JSON.stringify(data));
