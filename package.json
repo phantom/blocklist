@@ -1,6 +1,7 @@
 {
   "name": "@phantom-labs/blocklist",
   "version": "0.13.0",
+  "browser": "browser.js",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": "git@github.com:phantom-labs/blocklist.git",
