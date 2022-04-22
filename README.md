@@ -22,6 +22,11 @@ The `blocklist.yaml` is a list of URLs that are explicitly flagged as malicious.
 
 The `blocklist.yaml` file is automatically deployed upon a commit/merge to the `master` branch and is the canonical source of truth for the live blocklist on the production version of Phantom.
 
+# Integrations
+This repository and its accompanying [NPM package](https://www.npmjs.com/package/@phantom-labs/blocklist) are **NOT** intended for use in client-side applications. Due to its ever-growing size, the blocklist has serious performance implications for any app that includes it in a browser-destined bundle.
+
+If you are interested in integrating this blocklist into your project, please open an [issue](https://github.com/phantom-labs/blocklist/issues) that describes your intended use case.
+
 # Contributing
 If you would like to submit a URL to be added to the Phantom Blocklist, please open up a PR to the `master` branch of the repository. The PR should add an entry to the **bottom** of the `blocklist.yaml` file in the same format as other entries before it. The URL should **NOT** contain any protocol information such as `https://...` simply adding the URL is sufficient. Ideally either the commit message or the PR description should contain a description of why you are requesting that the site should be blocklisted, especially if it's not a clear phishing site that someone could discern from a quick glance.
 
