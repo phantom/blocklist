@@ -1,0 +1,25 @@
+name: Ensure Formatting
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  ensure-formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run validation script
+        run: node ./ci.js
