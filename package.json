@@ -7,8 +7,7 @@
   "author": "Jordan Leigh <AlwaysBCoding@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "node build.js",
-    "buildMultichain": "node buildMultichain.js"
+    "build": "node build.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
