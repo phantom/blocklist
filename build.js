@@ -12,7 +12,9 @@ const fuzzylist = yaml.load(fs.readFileSync('./fuzzylist.yaml', 'utf8'));
 // Multichain blocklist concatenates each blockchains blocklist
 const solBlocklistArray = solBlocklist.map((item) => { return item.url });
 const ethBlocklistArray = ethBlocklist.map((item) => { return item.url });
-const multichainBlocklistArray = ethBlocklistArray.concat(solBlocklistArray);
+// Important: Solana list must be at the head because of the way the cursor works
+// TODO: This is jank, we should fix this
+const multichainBlocklistArray = solBlocklistArray.concat(ethBlocklistArray);
 
 // Construct output files for solana only
 const data = {
