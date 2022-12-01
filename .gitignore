@@ -1,4 +1,5 @@
 node_modules/
+multichain/
 blocklist.json
 blocklist-full.json
 content-hash.json
