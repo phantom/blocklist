@@ -55,6 +55,7 @@ hashMultichain.update(JSON.stringify(data));
 const contentHashMultichain = hashMultichain.digest('hex');
 
 const dataMultichainFull = {
+  // TODO: Fix so we don't rely on ordering
   "blocklist": solBlocklist.concat(ethBlocklist),
   "nftBlocklist": nftBlocklist,
   "whitelist": whitelist,
