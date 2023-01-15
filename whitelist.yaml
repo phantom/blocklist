@@ -2,3 +2,5 @@
   - url: phantom.app
     versionTag: "0.13.0"
   - url: sneks.gg
+  - url: "*.web.app"
+  - url: "*.netlify.app"
