@@ -8,6 +8,7 @@ const ethBlocklist = yaml.load(fs.readFileSync('./eth-blocklist.yaml', 'utf8'));
 const nftBlocklist = yaml.load(fs.readFileSync('./nft-blocklist.yaml', 'utf8'));
 const whitelist = yaml.load(fs.readFileSync('./whitelist.yaml', 'utf8'));
 const fuzzylist = yaml.load(fs.readFileSync('./fuzzylist.yaml', 'utf8'));
+const metamaskExplainerWhitelist = yaml.load(fs.readFileSync('./metamask-explainer-whitelist.yaml', 'utf8'));
 
 // Multichain blocklist concatenates each blockchains blocklist
 const solBlocklistArray = solBlocklist.map((item) => { return item.url });
@@ -47,7 +48,8 @@ const dataMultichain = {
   "blocklist": multichainBlocklistArray,
   "nftBlocklist": nftBlocklist.map((item) => { return item.mint }),
   "whitelist": whitelist.map((item) => { return item.url }),
-  "fuzzylist": fuzzylist.map((item) => { return item.url })
+  "fuzzylist": fuzzylist.map((item) => { return item.url }),
+  "metamaskExplainerWhitelist": metamaskExplainerWhitelist.map((item) => { return item.url }),
 };
 
 const hashMultichain = new SHA3(256);
@@ -60,6 +62,7 @@ const dataMultichainFull = {
   "nftBlocklist": nftBlocklist,
   "whitelist": whitelist,
   "fuzzylist": fuzzylist,
+  "metamaskExplainerWhitelist": metamaskExplainerWhitelist.map((item) => { return item.url }),
   "ethBlocklist": ethBlocklist,
   "solBlocklist": solBlocklist
 };
