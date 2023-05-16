@@ -1,0 +1,68 @@
+Documentos de GitHub
+Código de seguridad /Dependabot /Alertas de Dependabot /Alertas de dependientebot
+Acerca de las alertas de Dependabot
+En este articulo
+Acerca de las alertas de Dependabot
+Detección de dependencias inseguras
+Configuración de alertas de Dependabot
+Acceso a las alertas de Dependabot
+Otras lecturas
+GitHub envía alertas de Dependabot cuando detectamos que tu repositorio usa una dependencia vulnerable o malware.
+
+Las alertas de Dependabot son de uso gratuito para todos los repositorios en GitHub.com.
+
+Acerca de las alertas de Dependabot
+Nota: los avisos de malware se encuentran actualmente en versión beta y están sujetos a cambios.
+
+Las alertas de Dependabot le indican que su código depende de un paquete que no es seguro.
+
+Si su código depende de un paquete con una vulnerabilidad de seguridad, esto puede causar una variedad de problemas para su proyecto o para las personas que lo usan. Debe actualizar a una versión segura del paquete lo antes posible. Si su código usa malware, debe reemplazar el paquete con una alternativa segura.
+
+Para obtener más información, consulte " Exploración de avisos de seguridad en la base de datos de avisos de GitHub ".
+
+Detección de dependencias inseguras
+Dependabot realiza un escaneo para detectar dependencias inseguras y envía alertas de Dependabot cuando:
+
+Se agrega un nuevo aviso a la base de datos de avisos de GitHub. Para obtener más información, consulte " Exploración de avisos de seguridad en la base de datos de avisos de GitHub ".
+
+Nota: Solo los avisos que han sido revisados ​​por GitHub activarán las alertas de Dependabot.
+
+El gráfico de dependencia de un repositorio cambia. Por ejemplo, cuando un colaborador envía una confirmación para cambiar los paquetes o versiones de los que depende, o cuando cambia el código de una de las dependencias. Para obtener más información, consulte " Acerca del gráfico de dependencia ".
+
+Además, GitHub puede revisar las dependencias agregadas, actualizadas o eliminadas en una solicitud de extracción realizada en la rama predeterminada de un repositorio y marcar cualquier cambio que reduzca la seguridad de su proyecto. Esto le permite detectar y tratar las dependencias vulnerables o el malware antes de que lleguen a su base de código, en lugar de después. Para obtener más información, consulta " Revisar los cambios de dependencia en una solicitud de extracción ".
+
+Para obtener una lista de los ecosistemas en los que GitHub detecta dependencias inseguras, consulte " Acerca del gráfico de dependencia ".
+
+Nota: Es importante mantener actualizados sus archivos de manifiesto y bloqueo. Si el gráfico de dependencia no refleja con precisión sus dependencias y versiones actuales, es posible que se pierda las alertas de las dependencias inseguras que utiliza. También puede recibir alertas de dependencias que ya no usa.
+
+Configuración de alertas de Dependabot
+GitHub detecta dependencias vulnerables y malware en repositorios públicos y muestra el gráfico de dependencia, pero no genera alertas de Dependabot de forma predeterminada. Los propietarios de repositorios o las personas con acceso de administrador pueden habilitar las alertas de Dependabot para repositorios públicos. Los propietarios de repositorios privados o las personas con acceso de administrador pueden habilitar las alertas de Dependabot al habilitar el gráfico de dependencia y las alertas de Dependabot para sus repositorios.
+
+También puede habilitar o deshabilitar las alertas de Dependabot para todos los repositorios que pertenecen a su cuenta de usuario u organización. Para obtener más información, consulte " Configuración de alertas de Dependabot ".
+
+Para obtener información sobre los requisitos de acceso para las acciones relacionadas con las alertas de Dependabot, consulte " Roles de repositorio para una organización ".
+
+GitHub comienza a generar el gráfico de dependencia de inmediato y genera alertas para cualquier dependencia insegura tan pronto como se identifique. El gráfico generalmente se completa en minutos, pero esto puede llevar más tiempo para los repositorios con muchas dependencias. Para obtener más información, consulte " Administrar la configuración de uso de datos para su repositorio privado ".
+
+Cuando GitHub identifica una dependencia vulnerable o malware, generamos una alerta de Dependabot y la mostramos en la pestaña Seguridad del repositorio y en el gráfico de dependencia del repositorio. La alerta incluye un enlace al archivo afectado en el proyecto e información sobre una versión corregida. GitHub también puede notificar a los mantenedores de los repositorios afectados sobre la nueva alerta de acuerdo con sus preferencias de notificación. Para obtener más información, consulte " Configuración de notificaciones para alertas de Dependabot ".
+
+Para los repositorios donde las actualizaciones de seguridad de Dependabot están habilitadas, la alerta también puede contener un enlace a una solicitud de extracción para actualizar el manifiesto o bloquear el archivo a la versión mínima que resuelve la vulnerabilidad. Para obtener más información, consulte " Acerca de las actualizaciones de seguridad de Dependabot ".
+
+Nota : las funciones de seguridad de GitHub no pretenden detectar todas las vulnerabilidades y el malware. Mantenemos activamente la base de datos de asesoramiento de GitHub y generamos alertas con la información más actualizada. Sin embargo, no podemos detectar todo ni informarle sobre las vulnerabilidades conocidas dentro de un marco de tiempo garantizado. Estas funciones no reemplazan la revisión humana de cada dependencia en busca de posibles vulnerabilidades o cualquier otro problema, y ​​recomendamos consultar con un servicio de seguridad o realizar una revisión exhaustiva de la dependencia cuando sea necesario.
+
+Acceso a las alertas de Dependabot
+Puede ver todas las alertas que afectan a un proyecto en particular en la pestaña Seguridad del repositorio o en el gráfico de dependencia del repositorio. Para obtener más información, consulte " Visualización y actualización de alertas de Dependabot ".
+
+De forma predeterminada, notificamos a las personas con permisos de administrador en los repositorios afectados sobre nuevas alertas de Dependabot. GitHub nunca revela públicamente las dependencias inseguras de ningún repositorio. También puede hacer que las alertas de Dependabot sean visibles para otras personas o equipos que trabajen con repositorios de su propiedad o para los que tenga permisos de administrador. Para obtener más información, consulte " Administrar la configuración de seguridad y análisis de su repositorio ".
+
+Para recibir notificaciones sobre las alertas de Dependabot en los repositorios, debe ver estos repositorios y suscribirse para recibir notificaciones de "Toda la actividad" o configurar ajustes personalizados para incluir "Alertas de seguridad". Para obtener más información, consulte " Configuración de notificaciones ".
+
+Puede elegir el método de envío de las notificaciones, así como la frecuencia con la que se le envían las notificaciones. Para obtener más información, consulte " Configuración de notificaciones para alertas de Dependabot ".
+
+También puede ver todas las alertas de Dependabot que corresponden a un aviso en particular en la base de datos de avisos de GitHub. Para obtener más información, consulte " Exploración de avisos de seguridad en la base de datos de avisos de GitHub ".
+
+Otras lecturas
+" Acerca de las actualizaciones de seguridad de Dependabot "
+" Visualización y actualización de alertas de Dependabot "
+" Auditoría de alertas de seguridad "
+" Privacidad en GitHub "
