@@ -31,3 +31,14 @@ If you are interested in integrating this blocklist into your project, please op
 If you would like to submit a URL to be added to the Phantom Blocklist, please open up a PR to the `master` branch of the repository. The PR should add an entry to the **bottom** of the `blocklist.yaml` file in the same format as other entries before it. The URL should **NOT** contain any protocol information such as `https://...` simply adding the URL is sufficient. Ideally either the commit message or the PR description should contain a description of why you are requesting that the site should be blocklisted, especially if it's not a clear phishing site that someone could discern from a quick glance.
 
 In addition to the `url: ...` entry, any additional metadata can be added to a blocklist entry, such as a short `description: ...` of why the site should be blocklisted or the name of the person/organization that is requesting the site be blocklisted.
+
+## Adding subdomains
+_See this [Example PR](https://github.com/phantom-labs/blocklist/pull/333/files) for adding subdomains._
+
+If you want to add a subdomain for a domain whose base url is non-malicious, follow these steps. For example, `github.io` is non-malicious, but `malicious.github.io` is a phishing website.
+
+1) Check if the base domain is already in the `whitelist.yaml` file. If not, add the base non-malicious domain to the `whitelist.yaml` file, including a wildcard `*` subdomain, surrounding the url with quotes `""`. For example, add `- url: "*.github.io"`. This signals to the blocklist that `github.io` holds non-malicious subdomains, but may also include malicious subdomains as well.
+
+_Important: Be sure to include the `*` subdomain and surround the url with quotes `""`. For example, [this line](https://github.com/phantom-labs/blocklist/blob/4fae828533cb93d43120b19871df889a02790680/whitelist.yaml#L5). you should add See as an example. else the malicious subdomains in the blocklist won't get picked up by the blocklist_.
+
+2) Add the malicious subdomain to the `blocklist.yaml` file, including the entire subdomain. For example, add `malicious.github.io` to the blocklist file.

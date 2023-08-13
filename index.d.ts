@@ -7,3 +7,4 @@ export interface PhantomBlocklist {
 
 export declare function getVersion(): string;
 export declare function getBlocklist(): PhantomBlocklist;
+export declare function getBlocklistMultichain(): PhantomBlocklist;
