@@ -3,14 +3,14 @@ const fs   = require('fs');
 const { SHA3 } = require('sha3');
 
 // Filter functions to ensure correct data types
-const checkUrls = (entry) => {
+const checkUrl = (entry) => {
   if (!entry || typeof entry.url !== "string") {
     throw new Error("Invalid URL");
   }
 
   return true;
 };
-const checkNfts = (entry) => {
+const checkNft = (entry) => {
   if (!entry || typeof entry.mint !== "string") {
     throw new Error("Invalid NFT Mint");
   }
@@ -19,11 +19,11 @@ const checkNfts = (entry) => {
 };
 
 // Read local yaml files for blocklists
-const solBlocklist = yaml.load(fs.readFileSync('./blocklist.yaml', 'utf8')).map(checkUrls);
-const ethBlocklist = yaml.load(fs.readFileSync('./eth-blocklist.yaml', 'utf8')).map(checkUrls);
-const nftBlocklist = yaml.load(fs.readFileSync('./nft-blocklist.yaml', 'utf8')).map(checkNfts);
-const whitelist = yaml.load(fs.readFileSync('./whitelist.yaml', 'utf8')).map(checkUrls);
-const fuzzylist = yaml.load(fs.readFileSync('./fuzzylist.yaml', 'utf8'));
+const solBlocklist = yaml.load(fs.readFileSync('./blocklist.yaml', 'utf8')).map(checkUrl);
+const ethBlocklist = yaml.load(fs.readFileSync('./eth-blocklist.yaml', 'utf8')).map(checkUrl);
+const nftBlocklist = yaml.load(fs.readFileSync('./nft-blocklist.yaml', 'utf8')).map(checkNft);
+const whitelist = yaml.load(fs.readFileSync('./whitelist.yaml', 'utf8')).map(checkUrl);
+const fuzzylist = yaml.load(fs.readFileSync('./fuzzylist.yaml', 'utf8')).map(checkUrl);;
 
 // Multichain blocklist concatenates each blockchains blocklist
 const solBlocklistArray = solBlocklist.map((item) => { return item.url });
