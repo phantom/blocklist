@@ -2,11 +2,27 @@ const yaml = require('js-yaml');
 const fs   = require('fs');
 const { SHA3 } = require('sha3');
 
+// Filter functions to ensure correct data types
+const filterUrls = (entry) => {
+  if (!entry || typeof entry.url !== "string") {
+    return false;
+  }
+
+  return true;
+};
+const filterNfts = (entry) => {
+  if (!entry || typeof entry.mint !== "string") {
+    return false;
+  }
+
+  return true;
+};
+
 // Read local yaml files for blocklists
-const solBlocklist = yaml.load(fs.readFileSync('./blocklist.yaml', 'utf8'));
-const ethBlocklist = yaml.load(fs.readFileSync('./eth-blocklist.yaml', 'utf8'));
-const nftBlocklist = yaml.load(fs.readFileSync('./nft-blocklist.yaml', 'utf8'));
-const whitelist = yaml.load(fs.readFileSync('./whitelist.yaml', 'utf8'));
+const solBlocklist = yaml.load(fs.readFileSync('./blocklist.yaml', 'utf8')).filter(filterUrls);
+const ethBlocklist = yaml.load(fs.readFileSync('./eth-blocklist.yaml', 'utf8')).filter(filterUrls);
+const nftBlocklist = yaml.load(fs.readFileSync('./nft-blocklist.yaml', 'utf8')).filter(filterNfts);
+const whitelist = yaml.load(fs.readFileSync('./whitelist.yaml', 'utf8')).filter(filterUrls);
 const fuzzylist = yaml.load(fs.readFileSync('./fuzzylist.yaml', 'utf8'));
 
 // Multichain blocklist concatenates each blockchains blocklist
