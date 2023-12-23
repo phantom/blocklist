@@ -9,6 +9,7 @@
   - url: "*.amplifyapp.com"
   - url: "*.slack.com"
   - url: "*.medium.com"
+  - url: "*.payoncred.com"
   - url: polygonventures.xyz
   - url: "*.visit.express"
   - url: "*.github.io"
