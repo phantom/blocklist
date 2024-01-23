@@ -22,3 +22,6 @@
   - url: "*.sphn.link"
   - url: "*.vercel.app"
   - url: "*.arweave.net"
+  - url: "*.mysellix.io"
+  - url: "*.sellix.io"
+  - url: "sellix.io"
