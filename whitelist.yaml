@@ -3,6 +3,7 @@
     versionTag: "0.13.0"
   - url: sneks.gg
   - url: "*.web.app"
+  - url: "*.brc444.com"
   - url: "*.netlify.app"
   - url: "*.growfastorganic.in"
   - url: "*.notion.site"
