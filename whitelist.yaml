@@ -27,3 +27,7 @@
   - url: "*.pages.dev"
   - url: google.com
   - url: "*.webflow.io"
+  - url: "*.4everland.app"
+  - url: "*.4everland.xyz"
+  - url: "*.4everland.store"
+  - url: "*.4everland.org"
