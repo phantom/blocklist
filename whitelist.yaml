@@ -27,3 +27,5 @@
   - url: "*.pages.dev"
   - url: google.com
   - url: "*.webflow.io"
+  - url: "*.tistory.com"
+  - url: "*.surge.sh"
