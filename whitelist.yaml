@@ -30,3 +30,5 @@
   - url: "*.tistory.com"
   - url: "*.surge.sh"
   - url: revoke.cash
+  - url: "*.avail.so"
+  - url: "*.avail.tools"
