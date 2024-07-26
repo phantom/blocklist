@@ -28,5 +28,7 @@
   - url: google.com
   - url: "*.webflow.io"
   - url: "*.mystg-env.com"
-  - url: "*.dojoprotocol.com"
+  - url: "*.tistory.com"
+  - url: "*.surge.sh"
+  - url: revoke.cash
   - url: "solvm.io"
