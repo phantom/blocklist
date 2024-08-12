@@ -30,6 +30,6 @@
   - url: "*.tistory.com"
   - url: "*.surge.sh"
   - url: revoke.cash
-  - url: "*.pambi.tech"
-  - url: "*.pambii.quest"
-  - url: "*.pambii.news"
+  - url: pambi.tech
+  - url: pambii.quest
+  - url: pambii.news
