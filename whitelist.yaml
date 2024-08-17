@@ -32,9 +32,8 @@
   - url: revoke.cash
   - url: *.walletconnect.com
   - url: *.walletconnect.org
-  - url: "*.amazonaws.com"
-
   - url: *.web3modal.com
   - url: *.web3modal.org
   - url: *.web3inbox.com
   - url: *.web3inbox.org
+  - url: "*.amazonaws.com"
