@@ -27,6 +27,9 @@
   - url: "*.pages.dev"
   - url: google.com
   - url: "*.webflow.io"
+  - url: "*.mystg-env.com"
   - url: "*.tistory.com"
   - url: "*.surge.sh"
   - url: revoke.cash
+  - url: "solvm.io"
+  - url: "*.mowprotocol.com"
