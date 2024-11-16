@@ -30,4 +30,4 @@
   - url: "*.tistory.com"
   - url: "*.surge.sh"
   - url: revoke.cash
-- url: "*gcatsolana.com"
+  - url: "*.gcatsolana.com"
