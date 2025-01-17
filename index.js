@@ -9,7 +9,7 @@ const getVersion = () => {
 const getBlocklist = () => {
   return blocklist;
 }
-
+/
 const getBlocklistMultichain = () => {
   return blocklistMultichain;
 }
