@@ -29,4 +29,5 @@
   - url: "*.webflow.io"
   - url: "*.tistory.com"
   - url: "*.surge.sh"
+  - url: revoke.cash
   - url: "*.burnearn.cash"
