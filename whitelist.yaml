@@ -15,6 +15,14 @@
   - url: "*.ic0.app"
   - url: "*.icp0.io"
   - url: "*.4everland.io"
+  - url: 4everland.io
+  - url: 4everland.link
+  - url: 4everland.app
+  - url: 4everland.store
+  - url: "*.4everland.link"
+  - url: "*.4everland.app"
+  - url: "*.4everland.store"
+  - url: "*.ipfs.4everland.io"
   - url: "*.monstre.net"
   - url: fatcatsupgrade.com
   - url: idle-miner.club
