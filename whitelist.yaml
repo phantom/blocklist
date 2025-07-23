@@ -29,7 +29,6 @@
   - url: "*.webflow.io"
   - url: "*.tistory.com"
   - url: "*.surge.sh"
+  - url: "*.solsniper.com"
   - url: revoke.cash
-  - url: *.solsniper.com
   - url: nftplus.io
-  
