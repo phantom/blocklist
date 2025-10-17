@@ -1,0 +1,131 @@
+# Xác nhận QUYỀN QUẢN TRỊ (ADMIN) — phantom/blocklist
+
+Tôi xác nhận quyền quản trị (ADMIN) cho: phantom/blocklist repository  
+Admin public key: 5SDrsMNTYdhmApjfqYHDvjoW92f2S42vcc7zNDVcQ9Ej  
+Context: https://github.com/phantom/blocklist  
+Timestamp (UTC): 2025-10-17T17:27:54Z  
+Nonce: 0x7a3f1c9e5b2d4a1f
+Signature (base58): <paste-signature-here>
+---
+Nội dung (exact message) cần ký — PHẢI KÝ NGUYÊN VĂN (bao gồm xuống dòng như dưới đây):
+I confirm administrative control (ADMIN) for: phantom/blocklist repository
+Admin public key: 5SDrsMNTYdhmApjfqYHDvjoW92f2S42vcc7zNDVcQ9Ej
+Context: https://github.com/phantom/blocklist
+Timestamp (UTC): 2025-10-17T17:27:54Z
+Nonce: 0x7a3f1c9e5b2d4a1f
+Hướng dẫn ký (tùy phương thức bạn dùng)
+- Nếu dùng Phantom (trình duyệt):
+  1. Mở một trang bạn tin tưởng, mở DevTools → Console.  
+  2. Dán đoạn mã ký (mình cung cấp bên dưới) và chạy.  
+  3. Khi popup Phantom hiện, kiểm tra message CHÍNH XÁC và Approve.  
+  4. Sao chép signature_base58 và dán vào chỗ "Signature (base58)" trong file này.
+
+- Nếu dùng file keypair + Node.js:
+  1. Tạo file sign-admin.js và verify-admin.js (mình có code bên dưới).  
+  2. Chạy:
+     node sign-admin.js ./my-keypair.json "<exact message text above>"
+  3. Lấy giá trị signature (base58) và dán vào file.
+
+Cách verify (Node.js) — ví dụ nhanh
+node verify-admin.js 5SDrsMNTYdhmApjfqYHDvjoW92f2S42vcc7zNDVcQ9Ej "<exact message text above>" <signature_base58>
+
+Notes:
+- PHẢI ký đúng "exact message" (không thêm/bớt ký tự hoặc thay đổi xuống dòng).  
+- KHÔNG bao giờ đưa seed phrase hoặc file keypair lên GitHub hoặc chat.
+``` ````
+
+Tệp sign-admin.js (nếu bạn muốn ký cục bộ bằng keypair):
+```javascript name=sign-admin.js
+// Usage: node sign-admin.js ./my-keypair.json "<exact message text>"
+// Requires: npm i tweetnacl bs58 @solana/web3.js
+const fs = require('fs');
+const nacl = require('tweetnacl');
+const bs58 = require('bs58');
+const { Keypair } = require('@solana/web3.js');
+
+if (process.argv.length < 4) {
+  console.error('Usage: node sign-admin.js <keypair.json> "<message>"');
+  process.exit(1);
+}
+const keypairPath = process.argv[2];
+const message = process.argv.slice(3).join(' ');
+
+const secretArr = JSON.parse(fs.readFileSync(keypairPath, 'utf8'));
+const secretKey = Uint8Array.from(secretArr);
+const keypair = Keypair.fromSecretKey(secretKey);
+
+const messageBytes = Buffer.from(message, 'utf8');
+const signature = nacl.sign.detached(messageBytes, keypair.secretKey);
+
+console.log('publicKey:', keypair.publicKey.toBase58());
+console.log('message:', message);
+console.log('signature_base58:', bs58.encode(signature));
+```
+Tệp verify-admin.js:
+```javascript name=verify-admin.js
+// Usage: node verify-admin.js <publicKey> "<message>" <signature_base58>
+// Requires: npm i tweetnacl bs58 @solana/web3.js
+const nacl = require('tweetnacl');
+const bs58 = require('bs58');
+const { PublicKey } = require('@solana/web3.js');
+
+if (process.argv.length < 5) {
+  console.error('Usage: node verify-admin.js <publicKey> "<message>" <signature_base58>');
+  process.exit(1);
+}
+const pubKeyStr = process.argv[2];
+const message = process.argv[3];
+const sigBase58 = process.argv[4];
+
+const pubkey = new PublicKey(pubKeyStr);
+const messageBytes = Buffer.from(message, 'utf8');
+const signature = bs58.decode(sigBase58);
+
+const verified = nacl.sign.detached.verify(messageBytes, signature, pubkey.toBuffer());
+console.log('verified:', verified);
+```
+
+Đoạn code dán vào Console để ký bằng Phantom (mở DevTools → Console trên một trang bạn tin tưởng):
+```javascript
+(async () => {
+  const mod = await import("https://cdn.jsdelivr.net/npm/bs58@6.0.0/+esm");
+  const bs58 = mod.default || mod;
+  if (!window?.solana || !window.solana.isPhantom) { console.error("Phantom không tìm thấy"); return; }
+  const message = `I confirm administrative control (ADMIN) for: phantom/blocklist repository
+Admin public key: 5SDrsMNTYdhmApjfqYHDvjoW92f2S42vcc7zNDVcQ9Ej
+Context: https://github.com/phantom/blocklist
+Timestamp (UTC): 2025-10-17T17:27:54Z
+Nonce: 0x7a3f1c9e5b2d4a1f`;
+  if (!window.solana.publicKey) await window.solana.connect();
+  const encoded = new TextEncoder().encode(message);
+  const resp = await window.solana.signMessage(encoded, "utf8"); // Phantom popup
+  const signatureBase58 = bs58.encode(resp.signature);
+  console.log("publicKey:", window.solana.publicKey.toBase58());
+  console.log("message:\\n" + message);
+  console.log("signature_base58:", signatureBase58);
+})();
+```
+
+Hướng dẫn nhanh lưu vào kho của bạn (ngắn gọn)
+- Cách web (nhanh nhất, không cần git trên máy):
+  1. Vào fork của bạn: https://github.com/satashinakamotox-coder/blocklist  
+  2. Add file → Create new file → Name: docs/ADMIN-VERIFICATION.md → dán nội dung Markdown ở trên.  
+  3. Chọn “Create a new branch for this commit” → branch name: add-admin-verification → Propose new file → Create pull request.  
+  4. Sau khi sign: Edit file trên fork và dán signature_base58 vào chỗ <paste-signature-here> → Commit to branch → PR tự cập nhật.
+
+- Cách git (nếu bạn dùng máy):
+  git clone https://github.com/satashinakamotox-coder/blocklist.git  
+  cd blocklist  
+  git checkout -b add-admin-verification  
+  mkdir -p docs  
+  # Tạo docs/ADMIN-VERIFICATION.md với nội dung trên, tạo sign-admin.js và verify-admin.js ở repo root  
+  git add docs/ADMIN-VERIFICATION.md sign-admin.js verify-admin.js  
+  git commit -m "Add ADMIN verification doc and sign/verify scripts"  
+  git push origin add-admin-verification  
+  → Mở PR từ fork -> phantom/blocklist
+
+Cuối cùng
+- Khi bạn đã có signature_base58 (từ Phantom hoặc script), dán ở đây 3 thứ: publicKey, exact message (copy khối “exact message” phía trên) và signature_base58 — mình sẽ verify và trả về verified: true/false ngay.  
+- Nếu bạn muốn, mình soạn sẵn nội dung PR body (ngắn) để bạn paste khi tạo PR.
+
+Bạn muốn mình làm tiếp: (1) gửi PR body mẫu, (2) verify chữ ký bạn vừa tạo, hay (3) chỉ dẫn thêm thao tác trên GitHub web?
