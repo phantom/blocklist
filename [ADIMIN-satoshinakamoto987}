@@ -1,0 +1,32 @@
+// Dán vào Console trên 1 trang web tin cậy, Phantom phải cài và kết nối.
+// Nhớ thay adminPubKey và context trước khi chạy.
+(async () => {
+  const mod = await import("https://cdn.skypack.dev/pin/bs58@v6.0.0-Aat1KtWHJdm0Hbha2vuT/mode=imports,min/optimized/bs58.js");
+  const bs58 = mod.default || mod;
+
+  if (!window?.solana || !window.solana.isPhantom) {
+    console.error("Phantom not found on this page. Open a trusted page and ensure Phantom extension is enabled.");
+    return;
+  }
+
+  // Thay các giá trị này bằng giá trị của bạn
+  const adminPubKey = "5SDrsMNTYdhmApjfqYHDvjoW92f2S42vcc7zNDVcQ9Ej";
+  const context = "phantom/blocklist repo (https://github.com/phantom/blocklist)";
+  const timestamp = new Date().toISOString();
+  const nonce = Array.from(crypto.getRandomValues(new Uint8Array(8))).map(b => b.toString(16).padStart(2,'0')).join('');
+  const message = `I confirm administrative control (ADMIN) for: ${context}\nAdmin public key: ${adminPubKey}\nTimestamp (UTC): ${timestamp}\nNonce: 0x${nonce}`;
+
+  // Nếu chưa kết nối, run: await window.solana.connect() và Approve
+  if (!window.solana.publicKey) {
+    await window.solana.connect();
+  }
+
+  const encoded = new TextEncoder().encode(message);
+  const resp = await window.solana.signMessage(encoded, "utf8"); // Phantom popup sẽ hiện
+  const signatureBase58 = bs58.encode(resp.signature);
+
+  console.log("=== SIGN RESULT ===");
+  console.log("publicKey:", window.solana.publicKey.toBase58());
+  console.log("message:\n", message);
+  console.log("signature_base58:", signatureBase58);
+})();
