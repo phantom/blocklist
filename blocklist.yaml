@@ -2319,3 +2319,9 @@
   - url: pumpp-fun.pages.dev
   - url: phantom-restorewalletteamdesk.webflow.io
   - url: dextoolwallets.on.fleek.co
+  - url: senthorix.com
+  description: contains malicious JavaScript stealing wallet private keys via AES-GCM decryption and CSS exfiltration 
+  - url: syndxtools.com
+  description: contains malicious JavaScript stealing wallet private keys via AES-GCM decryption and CSS exfiltration  
+  - url: vortex.vu
+  description: website with solana wallet drainer
