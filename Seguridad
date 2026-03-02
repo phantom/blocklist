@@ -1,0 +1,113 @@
+Documentos de GitHub
+Código de seguridad /Seguridad de la cadena de suministro /Comprenda su cadena de suministro /Seguridad de la cadena de suministro
+Acerca de la seguridad de la cadena de suministro
+En este articulo
+Acerca de la seguridad de la cadena de suministro en GitHub
+Resumen de características
+Disponibilidad de características
+GitHub lo ayuda a proteger su cadena de suministro, desde comprender las dependencias en su entorno hasta conocer las vulnerabilidades en esas dependencias y parchearlas.
+
+Acerca de la seguridad de la cadena de suministro en GitHub
+Con el uso acelerado del código abierto, la mayoría de los proyectos dependen de cientos de dependencias de código abierto. Esto plantea un problema de seguridad: ¿qué sucede si las dependencias que está utilizando son vulnerables? Podría estar poniendo a sus usuarios en riesgo de un ataque a la cadena de suministro. Una de las cosas más importantes que puede hacer para proteger su cadena de suministro es parchear sus dependencias vulnerables y reemplazar cualquier malware.
+
+Agrega dependencias directamente a su cadena de suministro cuando las especifica en un archivo de manifiesto o un archivo de bloqueo. Las dependencias también se pueden incluir de forma transitiva, es decir, incluso si no especifica una dependencia en particular, pero una dependencia suya la usa, entonces también depende de esa dependencia.
+
+GitHub ofrece una variedad de funciones para ayudarlo a comprender las dependencias en su entorno, conocer las vulnerabilidades en esas dependencias y parchearlas.
+
+Las características de la cadena de suministro en GitHub son:
+
+gráfico de dependencia
+revisión de dependencia
+Alertas de dependientebot
+Actualizaciones de Dependabot
+Actualizaciones de seguridad de Dependabot
+Actualizaciones de la versión de Dependabot
+El gráfico de dependencia es fundamental para la seguridad de la cadena de suministro. El gráfico de dependencia identifica todas las dependencias ascendentes y los dependientes descendentes públicos de un repositorio o paquete. Puede ver las dependencias de su repositorio y algunas de sus propiedades, como información de vulnerabilidad, en el gráfico de dependencia del repositorio.
+
+Otras características de la cadena de suministro en GitHub se basan en la información proporcionada por el gráfico de dependencia.
+
+La revisión de dependencias usa el gráfico de dependencias para identificar los cambios de dependencias y ayudarlo a comprender el impacto de estos cambios en la seguridad cuando revisa las solicitudes de incorporación de cambios.
+Dependabot cruza los datos de dependencia proporcionados por el gráfico de dependencia con la lista de avisos publicados en la base de datos de asesoramiento de GitHub, analiza sus dependencias y genera alertas de Dependabot cuando se detecta una posible vulnerabilidad o malware.
+Las actualizaciones de seguridad de Dependabot utilizan el gráfico de dependencias y las alertas de Dependabot para ayudarlo a actualizar las dependencias con vulnerabilidades conocidas en su repositorio.
+Las actualizaciones de la versión de Dependabot no utilizan el gráfico de dependencia y, en su lugar, se basan en el control de versiones semántico de las dependencias. Las actualizaciones de la versión de Dependabot lo ayudan a mantener sus dependencias actualizadas, incluso cuando no tienen vulnerabilidades.
+
+Para obtener guías de mejores prácticas sobre seguridad de la cadena de suministro de extremo a extremo, incluida la protección de cuentas personales, código y procesos de compilación, consulte " Asegurar su cadena de suministro de extremo a extremo ".
+
+Resumen de características
+¿Qué es el gráfico de dependencia?
+Para generar el gráfico de dependencia, GitHub analiza las dependencias explícitas de un repositorio declaradas en el manifiesto y los archivos de bloqueo. Cuando está habilitado, el gráfico de dependencias analiza automáticamente todos los archivos de manifiesto de paquetes conocidos en el repositorio y los usa para construir un gráfico con nombres y versiones de dependencias conocidas.
+
+El gráfico de dependencia incluye información sobre sus dependencias directas y transitivas .
+El gráfico de dependencia se actualiza automáticamente cuando envía una confirmación a GitHub que cambia o agrega un archivo de manifiesto o bloqueo compatible a la rama predeterminada, y cuando alguien envía un cambio al repositorio de una de sus dependencias.
+Puede ver el gráfico de dependencia abriendo la página principal del repositorio en GitHub y navegando a la pestaña Insights .
+Si tiene al menos acceso de lectura al repositorio, puede exportar el gráfico de dependencia para el repositorio como una Lista de materiales de software (SBOM) compatible con SPDX. Para obtener más información, consulte " Exportación de una lista de materiales de software para su repositorio ".
+Además, puede usar la API de envío de dependencias (beta) para enviar dependencias desde el administrador de paquetes o el ecosistema de su elección, incluso si el ecosistema no es compatible con el gráfico de dependencia para el análisis de archivo de bloqueo o manifiesto. Las dependencias enviadas a un proyecto mediante la API de envío de dependencias (beta) mostrarán qué detector se usó para su envío y cuándo se enviaron. Para obtener más información sobre la API de envío de dependencias, consulte " Uso de la API de envío de dependencias ".
+
+Para obtener más información sobre el gráfico de dependencia, consulte " Acerca del gráfico de dependencia ".
+
+¿Qué es la revisión de dependencia?
+La revisión de dependencia ayuda a los revisores y colaboradores a comprender los cambios de dependencia y su impacto en la seguridad en cada solicitud de incorporación de cambios.
+
+La revisión de dependencias le indica qué dependencias se agregaron, eliminaron o actualizaron en una solicitud de extracción. Puede usar las fechas de lanzamiento, la popularidad de las dependencias y la información de vulnerabilidad para decidir si acepta el cambio.
+Puede ver la revisión de dependencia para una solicitud de extracción mostrando la diferencia enriquecida en la pestaña Archivos modificados .
+Para obtener más información sobre la revisión de dependencias, consulte " Acerca de la revisión de dependencias ".
+
+¿Qué es Dependabot?
+Dependabot mantiene sus dependencias actualizadas al informarle sobre cualquier vulnerabilidad de seguridad en sus dependencias y abre automáticamente solicitudes de extracción para actualizar sus dependencias a la próxima versión segura disponible cuando se activa una alerta de Dependabot, o a la última versión cuando se publica un lanzamiento. .
+
+El término "Dependabot" engloba las siguientes características:
+
+Alertas de Dependabot: notificación mostrada en la pestaña Seguridad del repositorio y en el gráfico de dependencia del repositorio. La alerta incluye un enlace al archivo afectado en el proyecto e información sobre una versión corregida.
+Actualizaciones de Dependabot:
+Actualizaciones de seguridad de Dependabot: actualizaciones activadas para actualizar sus dependencias a una versión segura cuando se activa una alerta.
+Actualizaciones de la versión de Dependabot: actualizaciones programadas para mantener sus dependencias actualizadas con la última versión.
+Las alertas de Dependabot, las actualizaciones de seguridad de Dependabot y las actualizaciones de la versión de Dependabot no usan GitHub Actions cuando se ejecutan en GitHub. Sin embargo, las solicitudes de extracción abiertas por Dependabot pueden desencadenar flujos de trabajo que ejecutan acciones. Para obtener más información, consulte " Automatización de Dependabot con GitHub Actions ".
+
+Las actualizaciones de seguridad de Dependabot pueden corregir dependencias vulnerables en GitHub Actions. Cuando las actualizaciones de seguridad están habilitadas, Dependabot generará automáticamente una solicitud de extracción para actualizar las acciones vulnerables de GitHub utilizadas en sus flujos de trabajo a la versión mínima parcheada. Para obtener más información, consulte " Acerca de las actualizaciones de seguridad de Dependabot ".
+
+¿Qué son las alertas de Dependabot?
+Las alertas de Dependabot resaltan los repositorios afectados por una vulnerabilidad descubierta recientemente según el gráfico de dependencia y la base de datos de avisos de GitHub, que contiene avisos sobre vulnerabilidades conocidas y malware.
+
+Dependabot realiza un escaneo para detectar dependencias inseguras y envía alertas de Dependabot cuando:
+
+Se agrega un nuevo aviso a la base de datos de avisos de GitHub.
+El gráfico de dependencia para el repositorio cambia.
+Las alertas de Dependabot se muestran en la pestaña Seguridad del repositorio y en el gráfico de dependencia del repositorio. La alerta incluye un enlace al archivo afectado en el proyecto e información sobre una versión corregida.
+
+Para obtener más información, consulte " Acerca de las alertas de Dependabot ".
+
+¿Qué son las actualizaciones de Dependabot?
+Hay dos tipos de actualizaciones de Dependabot: actualizaciones de seguridad de Dependabot y actualizaciones de versión . Dependabot genera solicitudes de extracción automáticas para actualizar sus dependencias en ambos casos, pero existen varias diferencias.
+
+Actualizaciones de seguridad de Dependabot:
+
+Activado por una alerta de Dependabot
+Actualice las dependencias a la versión mínima que resuelva una vulnerabilidad conocida
+Compatible con los ecosistemas que admite el gráfico de dependencia
+No requiere un archivo de configuración, pero puede usar uno para anular el comportamiento predeterminado
+Actualizaciones de la versión de Dependabot:
+
+Requiere un archivo de configuración
+Ejecutar en un horario que configure
+Actualice las dependencias a la última versión que coincida con la configuración
+Compatible con un grupo diferente de ecosistemas
+Para obtener más información sobre las actualizaciones de Dependabot, consulte " Acerca de las actualizaciones de seguridad de Dependabot " y " Acerca de las actualizaciones de la versión de Dependabot ".
+
+Disponibilidad de características
+Repositorios públicos:
+
+Gráfico de dependencia : habilitado de forma predeterminada y no se puede deshabilitar.
+Revisión de dependencia : habilitada de forma predeterminada y no se puede deshabilitar.
+Alertas de Dependabot : no habilitadas de forma predeterminada. GitHub detecta dependencias inseguras y muestra información en el gráfico de dependencia, pero no genera alertas de Dependabot de forma predeterminada. Los propietarios del repositorio o las personas con acceso de administrador pueden habilitar las alertas de Dependabot. También puede habilitar o deshabilitar las alertas de Dependabot para todos los repositorios que pertenecen a su cuenta de usuario u organización. Para obtener más información, consulte " Administrar la configuración de seguridad y análisis de su cuenta personal " o " Administrar la configuración de seguridad y análisis de su organización ".
+Repositorios privados:
+
+Gráfico de dependencia : no habilitado de forma predeterminada. La característica puede ser habilitada por los administradores del repositorio. Para obtener más información, consulte " Exploración de las dependencias de un repositorio ".
+
+Revisión de dependencia : disponible en repositorios privados propiedad de organizaciones que usan GitHub Enterprise Cloud y tienen una licencia para GitHub Advanced Security. Para obtener más información, consulta la documentación de GitHub Enterprise Cloud .
+
+Alertas de Dependabot : no habilitadas de forma predeterminada. Los propietarios de repositorios privados o las personas con acceso de administrador pueden habilitar las alertas de Dependabot al habilitar el gráfico de dependencia y las alertas de Dependabot para sus repositorios. También puede habilitar o deshabilitar las alertas de Dependabot para todos los repositorios que pertenecen a su cuenta de usuario u organización. Para obtener más información, consulte " Administrar la configuración de seguridad y análisis de su cuenta personal " o " Administrar la configuración de seguridad y análisis de su organización ".
+
+Cualquier tipo de repositorio:
+
+Actualizaciones de seguridad de Dependabot : no habilitadas de forma predeterminada. Puede habilitar las actualizaciones de seguridad de Dependabot para cualquier repositorio que use alertas de Dependabot y el gráfico de dependencia. Para obtener información sobre cómo habilitar las actualizaciones de seguridad, consulte " Configuración de las actualizaciones de seguridad de Dependabot ".
+Actualizaciones de la versión de Dependabot : no habilitadas de forma predeterminada. Las personas con permisos de escritura en un repositorio pueden habilitar las actualizaciones de la versión de Dependabot. Para obtener información sobre cómo habilitar las actualizaciones de versión, consulte " Configuración de actualizaciones de versión de Dependabot ".
