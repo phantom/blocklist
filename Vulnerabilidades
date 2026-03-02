@@ -1,0 +1,51 @@
+title	intro	versions	type	topics	shortTitle
+
+Informar de forma privada sobre una vulnerabilidad de seguridad
+
+Algunos repositorios públicos configuran avisos de seguridad para que cualquiera pueda informar las vulnerabilidades de seguridad de forma directa y privada a los mantenedores.
+
+fpt ghec
+
+*
+
+*
+
+cómo
+
+Avisos de seguridad
+
+vulnerabilidades
+
+Informes privados
+
+{% data reusables.security-advisory.private-vulnerability-reporting-enable %}
+
+{% nota %}
+
+Nota: si tiene permisos de administrador o de seguridad para un repositorio público, no necesita enviar un informe de vulnerabilidad. En su lugar, puede crear un borrador de aviso de seguridad directamente. Para obtener más información, consulte "TÍTULO AUTOMÁTICO".
+
+{% nota final %}
+
+Acerca de informar de forma privada una vulnerabilidad de seguridad
+
+Los investigadores de seguridad a menudo se sienten responsables de alertar a los usuarios sobre una vulnerabilidad que podría explotarse. Si no hay instrucciones claras sobre cómo contactar a los mantenedores del repositorio que contiene la vulnerabilidad, es posible que los investigadores de seguridad no tengan otra opción que publicar sobre la vulnerabilidad en las redes sociales, enviar mensajes directos al mantenedor o incluso crear problemas públicos. Esta situación puede conducir potencialmente a una divulgación pública de los detalles de la vulnerabilidad.
+
+Los informes privados de vulnerabilidades facilitan que los investigadores de seguridad informen de vulnerabilidades directamente al mantenedor del repositorio mediante un formulario simple.
+
+Para los investigadores de seguridad, los beneficios de usar informes privados de vulnerabilidad son:
+
+Menos frustración y menos tiempo dedicado a averiguar cómo ponerse en contacto con el mantenedor.
+
+Un proceso más fluido para revelar y discutir los detalles de la vulnerabilidad.
+
+La oportunidad de discutir los detalles de la vulnerabilidad en privado con el mantenedor del repositorio.
+
+{% data reusables.security-advisory.private-vulnerability-reporting-disabled %}
+
+Informar de forma privada sobre una vulnerabilidad de seguridad
+
+Si no tiene permisos de administrador o de seguridad para un repositorio público, aún puede informar de forma privada una vulnerabilidad de seguridad a los mantenedores del repositorio. También puede evaluar la seguridad general de un repositorio público y sugerir una política de seguridad. Para obtener más información, consulte "TÍTULO AUTOMÁTICO".
+
+{% data reusables.security-advisory.reporting-a-vulnerability-non-admin %}
+
+Los siguientes pasos dependen de la acción que tome el mantenedor del repositorio. Para obtener más información, consulte "TÍTULO AUTOMÁTICO".
