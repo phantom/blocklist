@@ -1,0 +1,43 @@
+title	intro	permissions	versions	type	topics	shortTitle
+
+Configuración de informes de vulnerabilidad privada para un repositorio
+
+Los propietarios y administradores de repositorios públicos pueden permitir que los investigadores de seguridad informen sobre vulnerabilidades de forma segura en el repositorio al habilitar la generación de informes privados sobre vulnerabilidades.
+
+Cualquier persona con permisos de administrador para un repositorio público puede habilitar y deshabilitar los informes privados de vulnerabilidades para el repositorio.
+
+fpt ghec
+
+*
+
+*
+
+cómo
+
+Avisos de seguridad
+
+vulnerabilidades
+
+Configurar para un repositorio
+
+Acerca de informar de forma privada una vulnerabilidad de seguridad
+
+Los investigadores de seguridad a menudo se sienten responsables de alertar a los usuarios sobre una vulnerabilidad que podría explotarse. Si no hay instrucciones claras sobre cómo contactar a los mantenedores del repositorio que contiene la vulnerabilidad, es posible que los investigadores de seguridad no tengan otra opción que publicar sobre la vulnerabilidad en las redes sociales, enviar mensajes directos al mantenedor o incluso crear problemas públicos. Esta situación puede conducir potencialmente a una divulgación pública de los detalles de la vulnerabilidad.
+
+{% data reusables.security-advisory.private-vulnerability-reporting-overview %}
+
+Para los mantenedores, los beneficios de usar informes privados de vulnerabilidad son: {% data reusables.security-advisory.private-vulnerability-reporting-benefits %}
+
+Las instrucciones de este artículo se refieren a la habilitación a nivel de repositorio. Para obtener información sobre cómo habilitar la función a nivel de organización, consulte "TÍTULO AUTOMÁTICO".
+
+Habilitación o deshabilitación de informes de vulnerabilidad privados para un repositorio
+
+{% data reusables.repositories.navigate-to-repo %} {% data reusables.repositories.sidebar-settings %} {% data reusables.repositories.navigate-to-code-security-and-analysis %}
+
+En "Seguridad y análisis de código", a la derecha de "Informes privados de vulnerabilidad", haga clic en Habilitar o Deshabilitar, para habilitar o deshabilitar la característica, respectivamente.
+
+Captura de pantalla de la página "Seguridad y análisis del código", que muestra la configuración "Informes privados de vulnerabilidades". El botón "Habilitar" está resaltado en naranja oscuro.
+
+{% data reusables.security-advisory.private-vulnerability-reporting-security-researcher %}
+
+{% datos reutilizables.aviso de seguridad.privado-vulnerabilidad-api %}
