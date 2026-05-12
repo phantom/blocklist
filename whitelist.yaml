@@ -31,3 +31,7 @@
   - url: "*.surge.sh"
   - url: revoke.cash
   - url: nftplus.io
+  - url: "*.bingx.pro"
+  - url: "*.bingx.io"
+  - url: "*.bingxzone.com"
+  - url: "*.bingxtech.com"
