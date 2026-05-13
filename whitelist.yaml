@@ -31,3 +31,5 @@
   - url: "*.surge.sh"
   - url: revoke.cash
   - url: nftplus.io
+  - url: profanos1.rssing.com
+    description: Legitimate read-only RSS mirror serving public blog content for profanos.com
