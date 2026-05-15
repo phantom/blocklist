@@ -1,33 +1,34 @@
 ---
-  - url: phantom.app
-    versionTag: "0.13.0"
-  - url: sneks.gg
-  - url: "*.web.app"
-  - url: "*.netlify.app"
-  - url: "*.growfastorganic.in"
-  - url: "*.notion.site"
-  - url: "*.amplifyapp.com"
-  - url: "*.slack.com"
-  - url: "*.medium.com"
-  - url: polygonventures.xyz
-  - url: "*.visit.express"
-  - url: "*.github.io"
-  - url: "*.ic0.app"
-  - url: "*.icp0.io"
-  - url: "*.4everland.io"
-  - url: "*.monstre.net"
-  - url: fatcatsupgrade.com
-  - url: idle-miner.club
-  - url: "*.spheron.app"
-  - url: "*.sphn.link"
-  - url: "*.vercel.app"
-  - url: "*.arweave.net"
-  - url: wenwencoin.com
-  - url: "*.glitch.me"
-  - url: "*.pages.dev"
-  - url: google.com
-  - url: "*.webflow.io"
-  - url: "*.tistory.com"
-  - url: "*.surge.sh"
-  - url: revoke.cash
-  - url: nftplus.io
+- url: phantom.app
+  versionTag: "0.13.0"
+- url: sneks.gg
+- url: "*.web.app"
+- url: "*.netlify.app"
+- url: "*.growfastorganic.in"
+- url: "*.notion.site"
+- url: "*.amplifyapp.com"
+- url: "*.slack.com"
+- url: "*.medium.com"
+- url: polygonventures.xyz
+- url: "*.visit.express"
+- url: "*.github.io"
+- url: "*.ic0.app"
+- url: "*.icp0.io"
+- url: "*.4everland.io"
+- url: "*.monstre.net"
+- url: fatcatsupgrade.com
+- url: idle-miner.club
+- url: "*.spheron.app"
+- url: "*.sphn.link"
+- url: "*.vercel.app"
+- url: "*.arweave.net"
+- url: wenwencoin.com
+- url: "*.glitch.me"
+- url: "*.pages.dev"
+- url: google.com
+- url: "*.webflow.io"
+- url: "*.tistory.com"
+- url: "*.surge.sh"
+- url: revoke.cash
+- url: nftplus.io
+- url: "brasil.campus-party.org"
