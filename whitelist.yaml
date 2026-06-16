@@ -31,3 +31,7 @@
   - url: "*.surge.sh"
   - url: revoke.cash
   - url: nftplus.io
+  - url: bigone.com
+  - url: "*.bigone.com"
+  - url: big.one
+  - url: "*.big.one"
