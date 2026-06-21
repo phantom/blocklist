@@ -31,3 +31,5 @@
   - url: "*.surge.sh"
   - url: revoke.cash
   - url: nftplus.io
+  - url: eosauthority.com
+  - url: "*.eosauthority.com"
