@@ -10,7 +10,7 @@
     "build": "node build.js"
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "sha3": "^2.1.4"
   }
 }
