@@ -42,3 +42,17 @@ If you want to add a subdomain for a domain whose base url is non-malicious, fol
 _Important: Be sure to include the `*` subdomain and surround the url with quotes `""`. For example, [this line](https://github.com/phantom-labs/blocklist/blob/4fae828533cb93d43120b19871df889a02790680/whitelist.yaml#L5). you should add See as an example. else the malicious subdomains in the blocklist won't get picked up by the blocklist_.
 
 2) Add the malicious subdomain to the `blocklist.yaml` file, including the entire subdomain. For example, add `malicious.github.io` to the blocklist file.
+
+## Reporting false positives
+
+If a legitimate site is incorrectly flagged, add only the hostname or hostnames
+that you can verify to `whitelist.yaml`. Prefer exact hosts (for example,
+`example.com` and `www.example.com`) over a wildcard. A wildcard such as
+`"*.example.com"` should be used only when every subdomain is controlled and
+reviewed by the same operator.
+
+The pull request should include evidence that reviewers can verify independently,
+such as the site's official application-store listing, established public history,
+or proof of domain ownership. It should also describe any redirects and explain
+why each requested hostname is needed. A clean reputation scan is useful supporting
+evidence, but should not be the only signal used to approve a domain.
