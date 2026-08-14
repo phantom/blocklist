@@ -1,4 +1,3 @@
----
   - url: phantom.app
     versionTag: "0.13.0"
   - url: sneks.gg
@@ -31,3 +30,4 @@
   - url: "*.surge.sh"
   - url: revoke.cash
   - url: nftplus.io
+  - url: tailwindcss.com
