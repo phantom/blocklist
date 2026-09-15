@@ -51,7 +51,7 @@ const dataMultichain = {
 };
 
 const hashMultichain = new SHA3(256);
-hashMultichain.update(JSON.stringify(data));
+hashMultichain.update(JSON.stringify(dataMultichain));
 const contentHashMultichain = hashMultichain.digest('hex');
 
 const dataMultichainFull = {
