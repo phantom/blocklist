@@ -2319,3 +2319,5 @@
   - url: pumpp-fun.pages.dev
   - url: phantom-restorewalletteamdesk.webflow.io
   - url: dextoolwallets.on.fleek.co
+  - url: solmintdev.com
+    description: Impersonates Solmint (solmint.dev) - uses its official social handle "solmintdev" and a mirrored page title; fabricated trust claims hard-coded in its bundle (400,000+ tokens created, fake live-activity feed); asks users to connect Solana wallets and sign. Registered 2026-09-27. Reported by RaptorLabs, operator of solmint.dev.
