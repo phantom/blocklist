@@ -2319,3 +2319,7 @@
   - url: pumpp-fun.pages.dev
   - url: phantom-restorewalletteamdesk.webflow.io
   - url: dextoolwallets.on.fleek.co
+  - url: ccreator.io
+    description: Wallet drainer. Bare "Connect Wallet" page (/?app=spoodle) loading the walletadapter-cdn-cloud.com drainer kit (PhishDestroy - malicious, sinkholed) via blank-ckd.pages.dev/blank.js, with a visit beacon and a geo-IP check. Former domain of the operator of solmint.net. Reported by RaptorLabs, operator of solmint.dev.
+  - url: solmint.net
+    description: Impersonates Solmint (solmint.dev) - registered 2025-08-22, two days after the operator's business proposal to Solmint was declined; his product "ccreator.io" was renamed "Solmint.net"; page title "Solmint - Solana Token Creator"; the sister domain ccreator.io serves a wallet drainer. Reported by RaptorLabs, operator of solmint.dev.
