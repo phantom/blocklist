@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
-          node-version: "18"
+          node-version: "22.23.4"
           cache: yarn
       - name: Setup Pages
         uses: actions/configure-pages@b8130d9ab958b325bbde9786d62f2c97a9885a0e # v3
