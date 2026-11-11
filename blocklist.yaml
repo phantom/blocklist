@@ -2319,3 +2319,5 @@
   - url: pumpp-fun.pages.dev
   - url: phantom-restorewalletteamdesk.webflow.io
   - url: dextoolwallets.on.fleek.co
+  - url: zzig-ecosystem.xyz
+    description: Verbatim clone of zig.finance serving a Base wallet drainer that targets Phantom and MetaMask via EIP-6963 provider discovery. Reported by the ZIG Finance team.
