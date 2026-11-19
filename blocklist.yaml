@@ -2319,3 +2319,7 @@
   - url: pumpp-fun.pages.dev
   - url: phantom-restorewalletteamdesk.webflow.io
   - url: dextoolwallets.on.fleek.co
+  - url: makefunai.fun
+    description: Phishing clone of make.fun. Shows a fake wallet Connect box that asks for a private key or seed phrase and POSTs it to /api/sync.
+  - url: makedotfun.xyz
+    description: Second clone of make.fun from the same kit, byte-identical app-bridge.js to makefunai.fun.
