@@ -2319,3 +2319,7 @@
   - url: pumpp-fun.pages.dev
   - url: phantom-restorewalletteamdesk.webflow.io
   - url: dextoolwallets.on.fleek.co
+  - url: notrandomfun.com
+    description: Impersonates notrandom.fun and redirects to a copy with a wallet connection flow.
+  - url: www.notrandomfun.com
+    description: Unauthorized copy of notrandom.fun with a wallet connection flow.
